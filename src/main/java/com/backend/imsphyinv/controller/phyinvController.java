@@ -45,7 +45,8 @@ public class phyinvController {
     public ResponseEntity<seriallist> createScannedSerials(@RequestBody seriallist list){
         LOG.info("POST /scannedSerial " + list);
         try {
-                return new ResponseEntity<seriallist>(list, HttpStatus.OK);
+            phyinvDao.createNewSerialList(list);
+            return new ResponseEntity<seriallist>(list, HttpStatus.OK);
         } catch (Exception e){
             LOG.log(Level.SEVERE, e.getLocalizedMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -56,6 +57,7 @@ public class phyinvController {
     public ResponseEntity<partlist> createScannedParts(@RequestBody partlist list){
         LOG.info("POST /scannedParts " + list);
         try {
+            phyinvDao.createNewPartList(list);
             return new ResponseEntity<partlist>(list, HttpStatus.OK);
         } catch (Exception e){
             LOG.log(Level.SEVERE, e.getLocalizedMessage());

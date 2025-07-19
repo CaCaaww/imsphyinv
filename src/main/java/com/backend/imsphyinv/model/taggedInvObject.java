@@ -55,6 +55,6 @@ public class taggedInvObject {
 
     @Override
     public String toString(){
-        return "taggedInvObject[serial=" + serial + ", scandata=" + scandate + ", username=" + username + ", location=" + location + "]";
+        return "taggedInvObject[serial=" + serial + ", scandate=" + scandate + ", username=" + username + ", location=" + location + "]";
     }
 }
