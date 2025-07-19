@@ -4,17 +4,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 //part, qty, uom, scandate, user, location
 public class untaggedInvObject {
-    private String part;
-    private int qty;
-    private String uom;
-    private String scandate;
-    private String user;
-    private String location;
+    @JsonProperty("part") private String part;
+    @JsonProperty("qty") private int qty;
+    @JsonProperty("uom") private String uom;
+    @JsonProperty("scandate") private String scandate;
+    @JsonProperty("username") private String user;
+    @JsonProperty("location") private String location;
 
     public untaggedInvObject(){
 
     }
-    public untaggedInvObject(String part, int qty, String uom, String scandate, String user, String location){
+    public untaggedInvObject(@JsonProperty("part") String part, @JsonProperty("qty") int qty, @JsonProperty("uom") String uom, @JsonProperty("scandate") String scandate, @JsonProperty("username") String user, @JsonProperty("location") String location){
         this.part = part;
         this.qty = qty;
         this.uom = uom;
@@ -39,7 +39,7 @@ public class untaggedInvObject {
     public String getScandate(){
         return scandate;
     }
-    @JsonProperty("user")
+    @JsonProperty("username")
     public String getUser(){
         return user;
     }
@@ -64,7 +64,7 @@ public class untaggedInvObject {
     public void setScandate(String scandate){
         this.scandate = scandate;
     }
-    @JsonProperty("user")
+    @JsonProperty("username")
     public void setUser(String user){
         this.user = user;
     }

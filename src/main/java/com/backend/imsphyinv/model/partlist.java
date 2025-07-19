@@ -3,12 +3,12 @@ package com.backend.imsphyinv.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class partlist {
-    private untaggedInvObject[] PartList;
+    @JsonProperty("PartList") private untaggedInvObject[] PartList;
 
     public partlist(){
 
     }
-    public partlist(untaggedInvObject[] PartList){
+    public partlist(@JsonProperty("PartList") untaggedInvObject[] PartList){
         this.PartList = PartList;
     }
 

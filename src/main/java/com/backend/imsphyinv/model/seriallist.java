@@ -3,12 +3,12 @@ package com.backend.imsphyinv.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class seriallist {
-    private taggedInvObject[] SerialList;
+    @JsonProperty("SerialList") private taggedInvObject[] SerialList;
 
     public seriallist(){
 
     }
-    public seriallist(taggedInvObject[] SerialList){
+    public seriallist(@JsonProperty("SerialList") taggedInvObject[] SerialList){
         this.SerialList = SerialList;
     }
 

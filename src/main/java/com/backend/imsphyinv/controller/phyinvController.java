@@ -1,6 +1,6 @@
 package com.backend.imsphyinv.controller;
 
-import org.springframework.http.HttpEntity;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -8,14 +8,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.backend.imsphyinv.model.partlist;
 import com.backend.imsphyinv.model.seriallist;
-import com.backend.imsphyinv.model.taggedInvObject;
-import com.backend.imsphyinv.model.untaggedInvObject;
-import com.backend.imsphyinv.persistence.phyinvDAO;
+import com.backend.imsphyinv.persistence.phyinvDao;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 
@@ -24,10 +21,10 @@ import java.util.logging.Level;
 @RequestMapping("/IMSPhyInv")
 public class phyinvController {
     private static final Logger LOG = Logger.getLogger(phyinvController.class.getName());
-    private phyinvDAO phyinvDao;
+    private phyinvDao phyinvDao;
 
-    public phyinvController(){
-        phyinvDao = new phyinvDAO();
+    public phyinvController(phyinvDao phyinvDao){
+        this.phyinvDao = phyinvDao; 
     }
 
 

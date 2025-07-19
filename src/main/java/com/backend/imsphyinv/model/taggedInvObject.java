@@ -4,15 +4,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 //serial, scandata, username, location
 public class taggedInvObject {
-    private String serial;
-    private String scandate;
-    private String username;
-    private String location;
+    @JsonProperty("serial") private String serial;
+    @JsonProperty("scandate") private String scandate;
+    @JsonProperty("username") private String username;
+    @JsonProperty("location") private String location;
 
     public taggedInvObject(){
 
     }
-    public taggedInvObject(String serial, String scandate, String username, String location){
+    public taggedInvObject( @JsonProperty("serial") String serial,  @JsonProperty("scandate") String scandate,  @JsonProperty("username") String username,  @JsonProperty("location") String location){
         this.serial = serial;
         this.scandate = scandate;
         this.username = username;
