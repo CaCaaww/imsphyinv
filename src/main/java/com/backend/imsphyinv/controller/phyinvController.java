@@ -1,6 +1,8 @@
 package com.backend.imsphyinv.controller;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -16,6 +18,7 @@ import com.backend.imsphyinv.persistence.phyinvDao;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 
+@EnableAutoConfiguration
 @RestController
 @CrossOrigin("http://192.168.12.31:9080")
 @RequestMapping("/IMSPhyInv")
@@ -23,6 +26,7 @@ public class phyinvController {
     private static final Logger LOG = Logger.getLogger(phyinvController.class.getName());
     private phyinvDao phyinvDao;
 
+    @Autowired
     public phyinvController(phyinvDao phyinvDao){
         this.phyinvDao = phyinvDao; 
     }

@@ -5,9 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
-import com.backend.imsphyinv.controller.phyinvController;
 
-@SpringBootApplication (scanBasePackageClasses = phyinvController.class)
+//@SpringBootApplication (scanBasePackageClasses = phyinvController.class)
+@SpringBootApplication
 public class ImsphyinvApplication extends SpringBootServletInitializer{
 
 	public static void main(String[] args) {
